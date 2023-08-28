@@ -21,11 +21,13 @@ abstract class _CarrinhoStore with Store {
   @action
   void adicionaItem(Item item) {
     listaItem.add(item);
+    atualizaTotalDaCompra();
   }
 
   @action
   void removerItem(Item item) {
     if (listaItem.isNotEmpty) listaItem.remove(item);
+    atualizaTotalDaCompra();
   }
 
   @action
